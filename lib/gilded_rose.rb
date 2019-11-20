@@ -30,45 +30,40 @@ class GildedRose
     if item.quality ===  MINIMUM_QUALITY
       item.quality = MINIMUM_QUALITY
     else
-      if item.sell_in >= 0
-        item.quality -= 1
-      else
-        item.quality -=2
-      end
+      item.sell_in >= 0 ? item.quality -= 1 : item.quality -= 2
     end
   end
 
   def aged_brie(item)
     if item.quality < MAXIMUM_QUALITY
-      if item.sell_in.between?(-5,-1)
-        item.quality +=2
+      if item.sell_in.between?(-5, -1)
+        item.quality += 2
       elsif item.sell_in < -5
-        item.quality +=3
+        item.quality += 3
       else
-        item.quality +=1
+        item.quality += 1
       end
     else 
-      item.quality =MAXIMUM_QUALITY
+      item.quality = MAXIMUM_QUALITY
     end
   end
 
   def concert_pass(item)
-      if item.sell_in === 0
-        item.quality =0
-      elsif item.sell_in > 10 && item.quality <= (MAXIMUM_QUALITY - 1)
-        item.quality +=1
-      elsif item.sell_in.between?(6,10) && item.quality <= (MAXIMUM_QUALITY - 2)
-        item.quality +=2
-      elsif item.sell_in.between?(1,5) && item.quality <= (MAXIMUM_QUALITY - 3)
-        item.quality +=3
-      else 
-        item.quality = MAXIMUM_QUALITY
+    if item.sell_in === 0
+      item.quality = 0
+    elsif item.sell_in > 10 && item.quality <= (MAXIMUM_QUALITY - 1)
+      item.quality += 1
+    elsif item.sell_in.between?(6, 10) && item.quality <= (MAXIMUM_QUALITY - 2)
+      item.quality += 2
+    elsif item.sell_in.between?(1, 5) && item.quality <= (MAXIMUM_QUALITY - 3)
+      item.quality += 3
+    else 
+      item.quality = MAXIMUM_QUALITY
     end
   end
 
   def sulfuras(item)
     item.quality = SULFURAS_QUALITY
-    item.sell_in +=1
+    item.sell_in += 1
   end
 end
-

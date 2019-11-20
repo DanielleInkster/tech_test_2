@@ -3,23 +3,23 @@ require 'gilded_rose'
 describe GildedRose do
 
   describe "#update_quality" do
-    it 'subtracts one from the sell_in day'do
+    it 'subtracts one from the sell_in day' do
       items = [Item.new("foo", 1, 1)]
       GildedRose.new(items).update_quality()
       expect(items[0].sell_in).to eq 0
     end
 
     describe '#quality_check' do
-      it 'subtracts one from the quality count if sell_in is positive'do
+      it 'subtracts one from the quality count if sell_in is positive' do
         items = [Item.new("foo", 1, 1)]
         GildedRose.new(items).update_quality()
         expect(items[0].quality).to eq 0
       end
 
-      it 'subtracts two from the quality count if sell_in is negative'do
-        items = [Item.new("foo", 0, 1)]
+      it 'subtracts two from the quality count if sell_in is negative' do
+        items = [Item.new("foo", 0, 2)]
         GildedRose.new(items).update_quality()
-        expect(items[0].quality).to eq -1
+        expect(items[0].quality).to eq 0
       end
 
       it 'does not allow quality below 0' do
@@ -36,7 +36,7 @@ describe GildedRose do
       end
     end
 
-    describe 'aged_brie'do
+    describe 'aged_brie' do
       it 'allows aged brie to increase in quality' do
         items = [Item.new("Aged Brie", 1, 0)]
         GildedRose.new(items).update_quality()
@@ -70,13 +70,13 @@ describe GildedRose do
 
     describe '#concert_pass' do
       it 'increases by 1 in quality when sell_in is > 10' do
-        items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 12 , 40)]
+        items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 12, 40)]
         GildedRose.new(items).update_quality()
         expect(items[0].quality).to eq 41
       end
 
       it 'increases by 2 in quality when sell_in is between 6, 10' do
-        items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 9 , 40)]
+        items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 9, 40)]
         GildedRose.new(items).update_quality()
         expect(items[0].quality).to eq 42
       end
@@ -94,7 +94,7 @@ describe GildedRose do
       end
 
       it 'does not exceed a quality of 50 ' do
-        items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 4, 50 )]
+        items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 4, 50)]
         GildedRose.new(items).update_quality()
         expect(items[0].quality).to eq 50
       end
