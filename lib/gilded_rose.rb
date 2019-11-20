@@ -3,6 +3,8 @@ require_relative 'assessment'
 
 class GildedRose
 
+  attr_accessor :assess
+
   def initialize(items, assess = ItemAssessor.new)
     @items = items
     @assess = assess

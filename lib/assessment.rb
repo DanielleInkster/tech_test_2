@@ -14,7 +14,7 @@ class ItemAssessor
   end
 
   def generic_item_check(item)
-    unless special?(item) 
+    unless not_generic?(item) 
       item.sell_in >= 0 ? item.quality -= 1 : item.quality -= 2
       item.quality = GEN_MIN if item.quality <= GEN_MIN
     end
@@ -52,7 +52,7 @@ class ItemAssessor
     end
   end
 
-  def special?(item)
+  def not_generic?(item)
     @special_items.include?(item.name) || item.name.include?('Conjured')
   end
 end
