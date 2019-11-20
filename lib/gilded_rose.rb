@@ -7,20 +7,18 @@ class GildedRose
 
   def initialize(items)
     @items = items
+    @arr = ['Aged Brie',
+      'Backstage passes to a TAFKAL80ETC concert',
+      "Sulfuras, Hand of Ragnaros"]
   end
 
   def update_quality
     @items.each do |item|
       item.sell_in -= 1
-      if item.name === 'Aged Brie'
-        aged_brie(item)
-      elsif item.name === 'Backstage passes to a TAFKAL80ETC concert'
-        concert_pass(item)
-      elsif item.name === "Sulfuras, Hand of Ragnaros" 
-        sulfuras(item)
-      else
-        quality_check(item)
-      end
+      quality_check(item) unless @arr.include?(item.name)
+      aged_brie(item) if item.name === 'Aged Brie'  
+      concert_pass(item) if item.name === 'Backstage passes to a TAFKAL80ETC concert'
+      sulfuras(item) if item.name === "Sulfuras, Hand of Ragnaros" 
     end
   end
 
