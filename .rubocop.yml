@@ -58,6 +58,11 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'test/**/*'
 
+Lint/UselessAssignment:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+
 Lint/AmbiguousBlockAssociation:
   Enabled: false 
 
