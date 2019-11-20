@@ -15,11 +15,19 @@ describe GildedRose do
       expect(items[0].quality).to eq 0
     end
 
-    it 'does not put quality below 0' do
-    items = [Item.new("foo", 0, 0)]
-    GildedRose.new(items).update_quality()
-    expect(items[0].quality).to eq 0
-  end
+    it 'does not allow quality below 0' do
+      items = [Item.new("foo", 0, 0)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].quality).to eq 0
+    end
+
+
+    # save for brie/tickets tests
+    # it 'does not allow quality above 50' do
+    #   items = [Item.new("foo", 0, 52)]
+    #   GildedRose.new(items).update_quality()
+    #   expect(items[0].quality).to eq 50
+    # end
 
 
 
