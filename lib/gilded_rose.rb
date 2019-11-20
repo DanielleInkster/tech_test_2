@@ -9,6 +9,7 @@ class GildedRose
     @items = items
   end
 
+
   def update_quality
     @items.each do |item|
       item.sell_in -= 1
@@ -27,43 +28,28 @@ class GildedRose
   private
 
   def quality_check(item)
-    if item.quality ===  MINIMUM_QUALITY
-      item.quality = MINIMUM_QUALITY
-    else
-      item.sell_in >= 0 ? item.quality -= 1 : item.quality -= 2
-    end
+    item.sell_in >= 0 ? item.quality -= 1 : item.quality -= 2
+    item.quality = MINIMUM_QUALITY if item.quality <= MINIMUM_QUALITY
   end
 
   def aged_brie(item)
-    if item.quality < MAXIMUM_QUALITY
-      if item.sell_in.between?(-5, -1)
-        item.quality += 2
-      elsif item.sell_in < -5
-        item.quality += 3
-      else
-        item.quality += 1
-      end
-    else 
-      item.quality = MAXIMUM_QUALITY
-    end
+    item.quality += 1 if item.sell_in >= 0
+    item.quality += 2 if item.sell_in.between?(-5, -1)  
+    item.quality += 3 if item.sell_in < -5
+    item.quality = MAXIMUM_QUALITY if item.quality >= MAXIMUM_QUALITY
   end
 
   def concert_pass(item)
-    if item.sell_in === 0
-      item.quality = 0
-    elsif item.sell_in > 10 && item.quality <= (MAXIMUM_QUALITY - 1)
-      item.quality += 1
-    elsif item.sell_in.between?(6, 10) && item.quality <= (MAXIMUM_QUALITY - 2)
-      item.quality += 2
-    elsif item.sell_in.between?(1, 5) && item.quality <= (MAXIMUM_QUALITY - 3)
-      item.quality += 3
-    else 
-      item.quality = MAXIMUM_QUALITY
-    end
+    item.quality = 0 if item.sell_in === 0 
+    item.quality += 1 if item.sell_in > 10 && item.quality <= (MAXIMUM_QUALITY - 1)  
+    item.quality += 2 if item.sell_in.between?(6, 10) && item.quality <= (MAXIMUM_QUALITY - 2) 
+    item.quality += 3 if item.sell_in.between?(1, 5) && item.quality <= (MAXIMUM_QUALITY - 3)
+    item.quality = MAXIMUM_QUALITY if item.quality >= MAXIMUM_QUALITY
   end
 
   def sulfuras(item)
     item.quality = SULFURAS_QUALITY
     item.sell_in += 1
   end
+
 end
