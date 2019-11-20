@@ -1,7 +1,6 @@
 require_relative 'item'
 
 class GildedRose
-
   # MAXIMUM_QUALITY = 50
   MINIMUM_QUALITY = 0
 
@@ -11,18 +10,20 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
+        quality_check(item)
       item.sell_in -= 1
-      quality_check(item)
     end
   end
 
 
   private
+
   def quality_check(item)
-    if item.quality ===  MINIMUM_QUALITY
-      MINIMUM_QUALITY
+    if item.name === "Sulfuras, Hand of Ragnaros" || item.quality ===  MINIMUM_QUALITY
+      item.quality +=0
     else
-    item.quality -= 1
+      item.quality -= 1
     end
   end
+
 end
