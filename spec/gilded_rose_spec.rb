@@ -34,6 +34,12 @@ describe GildedRose do
         expect(items[0].sell_in).to eq 0
         expect(items[0].quality).to eq 80
       end
+
+      it 'subtracts two from the quality count if the item is conjured' do
+        items = [Item.new("Conjured foo", 4, 4)]
+        GildedRose.new(items).update_quality()
+        expect(items[0].quality).to eq 2
+      end
     end
 
     describe 'aged_brie' do
@@ -100,13 +106,6 @@ describe GildedRose do
       end
 
     end
-
-    # save for brie/tickets tests
-    # it 'does not allow quality above 50' do
-    #   items = [Item.new("foo", 0, 52)]
-    #   GildedRose.new(items).update_quality()
-    #   expect(items[0].quality).to eq 50
-    # end
 
   end
 

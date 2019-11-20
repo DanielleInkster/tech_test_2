@@ -9,13 +9,15 @@ class GildedRose
     @items = items
     @arr = ['Aged Brie',
       'Backstage passes to a TAFKAL80ETC concert',
-      "Sulfuras, Hand of Ragnaros"]
+      "Sulfuras, Hand of Ragnaros",
+      ]
   end
 
   def update_quality
     @items.each do |item|
       item.sell_in -= 1
-      quality_check(item) unless @arr.include?(item.name)
+      quality_check(item) unless @arr.include?(item.name) || item.name.include?('Conjured')
+      conjured(item) if item.name.include?('Conjured')
       aged_brie(item) if item.name === 'Aged Brie'  
       concert_pass(item) if item.name === 'Backstage passes to a TAFKAL80ETC concert'
       sulfuras(item) if item.name === "Sulfuras, Hand of Ragnaros" 
@@ -47,5 +49,9 @@ class GildedRose
   def sulfuras(item)
     item.quality = SULFURAS_MAX
     item.sell_in += 1
+  end
+
+  def conjured(item)
+      item.sell_in >= 0 ? item.quality -= 2 : item.quality -= 4
   end
 end
