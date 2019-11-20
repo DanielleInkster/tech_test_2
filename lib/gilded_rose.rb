@@ -1,14 +1,13 @@
 require_relative 'item'
 
 class GildedRose
-  SULFURAS_QUALITY = 80
-  MAXIMUM_QUALITY = 50
-  MINIMUM_QUALITY = 0
+  SULFURAS_MAX = 80
+  GEN_MAX = 50
+  GEN_MIN = 0
 
   def initialize(items)
     @items = items
   end
-
 
   def update_quality
     @items.each do |item|
@@ -29,27 +28,26 @@ class GildedRose
 
   def quality_check(item)
     item.sell_in >= 0 ? item.quality -= 1 : item.quality -= 2
-    item.quality = MINIMUM_QUALITY if item.quality <= MINIMUM_QUALITY
+    item.quality = GEN_MIN if item.quality <= GEN_MIN
   end
 
   def aged_brie(item)
     item.quality += 1 if item.sell_in >= 0
     item.quality += 2 if item.sell_in.between?(-5, -1)  
     item.quality += 3 if item.sell_in < -5
-    item.quality = MAXIMUM_QUALITY if item.quality >= MAXIMUM_QUALITY
+    item.quality = GEN_MAX if item.quality >= GEN_MAX
   end
 
   def concert_pass(item)
     item.quality = 0 if item.sell_in === 0 
-    item.quality += 1 if item.sell_in > 10 && item.quality <= (MAXIMUM_QUALITY - 1)  
-    item.quality += 2 if item.sell_in.between?(6, 10) && item.quality <= (MAXIMUM_QUALITY - 2) 
-    item.quality += 3 if item.sell_in.between?(1, 5) && item.quality <= (MAXIMUM_QUALITY - 3)
-    item.quality = MAXIMUM_QUALITY if item.quality >= MAXIMUM_QUALITY
+    item.quality += 1 if item.sell_in > 10 
+    item.quality += 2 if item.sell_in.between?(6, 10)  
+    item.quality += 3 if item.sell_in.between?(1, 5) 
+    item.quality = GEN_MAX if item.quality >= GEN_MAX
   end
 
   def sulfuras(item)
-    item.quality = SULFURAS_QUALITY
+    item.quality = SULFURAS_MAX
     item.sell_in += 1
   end
-
 end
