@@ -9,10 +9,16 @@ describe GildedRose do
       expect(items[0].sell_in).to eq 0
     end
 
-    it 'subtracts one from the quality count'do
+    it 'subtracts one from the quality count if sell_in is positive'do
       items = [Item.new("foo", 1, 1)]
       GildedRose.new(items).update_quality()
       expect(items[0].quality).to eq 0
+    end
+
+    it 'subtracts two from the quality count if sell_in is negative'do
+      items = [Item.new("foo", 0, 1)]
+      GildedRose.new(items).update_quality()
+      expect(items[0].quality).to eq -1
     end
 
     it 'does not allow quality below 0' do

@@ -26,7 +26,11 @@ class GildedRose
     if item.name === "Sulfuras, Hand of Ragnaros" || item.quality ===  MINIMUM_QUALITY
       item.quality
     else
-      item.quality -= 1
+      if item.sell_in >= 0
+        item.quality -= 1
+      else
+        item.quality -=2
+      end
     end
   end
 
