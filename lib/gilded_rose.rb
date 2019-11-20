@@ -10,7 +10,11 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
+      if item.name === 'Aged Brie'
+        item.quality +=1
+      else
         quality_check(item)
+      end
       item.sell_in -= 1
     end
   end
@@ -20,7 +24,7 @@ class GildedRose
 
   def quality_check(item)
     if item.name === "Sulfuras, Hand of Ragnaros" || item.quality ===  MINIMUM_QUALITY
-      item.quality +=0
+      item.quality
     else
       item.quality -= 1
     end
