@@ -13,12 +13,13 @@ class GildedRose
       item.sell_in -= 1
       if item.name === 'Aged Brie'
         aged_brie(item)
+      elsif item.name === 'Backstage passes to a TAFKAL80ETC concert'
+        concert_pass(item)
       else
         quality_check(item)
       end
     end
   end
-
 
   private
 
@@ -48,4 +49,19 @@ class GildedRose
     end
   end
 
+  def concert_pass(item)
+    if item.quality < MAXIMUM_QUALITY
+      if item.sell_in > 10
+        item.quality +=1
+      elsif item.sell_in.between?(6,10)
+        item.quality +=2
+      elsif item.sell_in.between?(1,5)
+        item.quality +=3
+      else 
+        item.quality = 0
+      end
+      else item.quality
+    end
+  end
 end
+
