@@ -1,10 +1,10 @@
 # Gilded Rose Refactoring Challenge
 
 ## Original Challenge 
-####N.B: The original challenge was written by Terry Hughes in C#. The challenge completed in this repository is a Ruby
-translation from Emily Bache found [Translated code](https://github.com/emilybache/GildedRose-Refactoring-Kata "here.")
+#### N.B: The original challenge was written by Terry Hughes in C#. The challenge completed in this repository is a Ruby
+translation from Emily Bache found [here.](https://github.com/emilybache/GildedRose-Refactoring-Kata "Translated code source")
 
-###Gilded Rose Requirements Specification
+### Gilded Rose Requirements Specification
 ======================================
 
 Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a
@@ -61,6 +61,7 @@ legendary item and as such its Quality is 80 and it never alters.
 ```bash
 > rspec # Run the tests to ensure it works
 > rubocop # Check code quality
+```
 #### N.B - Rubocop is still flagging issues with guard clauses and complexity for one method. More in reflection
 
 ======================================
