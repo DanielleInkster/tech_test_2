@@ -1,5 +1,3 @@
-require_relative 'item'
-require_relative 'gilded_rose'
 
 class ItemAssessor
   SULFURAS_MAX = 80
@@ -15,7 +13,7 @@ class ItemAssessor
 
   def generic_item_check(item)
     unless not_generic?(item) 
-      item.sell_in >= 0 ? item.quality -= 1 : item.quality -= 2
+      item.sell_in >= GEN_MIN ? item.quality -= 1 : item.quality -= 2
       item.quality = GEN_MIN if item.quality <= GEN_MIN
     end
   end
@@ -31,17 +29,17 @@ class ItemAssessor
 
   def concert_pass(item)
     if item.name === 'Backstage passes to a TAFKAL80ETC concert'
-      item.quality = 0 if item.sell_in === 0 
       item.quality += 1 if item.sell_in > 10 
       item.quality += 2 if item.sell_in.between?(6, 10)  
       item.quality += 3 if item.sell_in.between?(1, 5) 
+      item.quality = GEN_MIN if item.sell_in === GEN_MIN 
       item.quality = GEN_MAX if item.quality >= GEN_MAX
     end
   end
 
   def conjured(item)
     if item.name.include?('Conjured')
-      item.sell_in >= 0 ? item.quality -= 2 : item.quality -= 4
+      item.sell_in >= GEN_MIN ? item.quality -= 2 : item.quality -= 4
     end
   end
 

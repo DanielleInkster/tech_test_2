@@ -1,7 +1,7 @@
-require 'assessment'
+require 'item_assessor'
 
 describe ItemAssessor do
-
+  
   describe '#generic_item_check' do
     it 'subtracts one from the quality count if sell_in is positive' do
       item = Item.new("foo", 1, 1)
