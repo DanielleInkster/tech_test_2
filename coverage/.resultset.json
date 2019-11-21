@@ -60,7 +60,7 @@
         null,
         null
       ],
-      "/Users/danielleinkster/Projects/makers/week9/gilded-rose2/tech_test_2/lib/item_assessor.rb": [
+      "/Users/danielleinkster/Projects/makers/week9/gilded-rose2/tech_test_2/lib/item_quality_assessor.rb": [
         null,
         1,
         1,
@@ -118,7 +118,7 @@
         null,
         null
       ],
-      "/Users/danielleinkster/Projects/makers/week9/gilded-rose2/tech_test_2/spec/item_assessor_spec.rb": [
+      "/Users/danielleinkster/Projects/makers/week9/gilded-rose2/tech_test_2/spec/item_quality_assessor_spec.rb": [
         1,
         null,
         1,
@@ -263,6 +263,6 @@
         null
       ]
     },
-    "timestamp": 1574341581
+    "timestamp": 1574342812
   }
 }
