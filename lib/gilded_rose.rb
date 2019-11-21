@@ -1,5 +1,5 @@
 require_relative 'item'
-require_relative 'item_assessor'
+require_relative 'item_quality_assessor'
 
 class GildedRose
 
