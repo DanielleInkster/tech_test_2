@@ -83,7 +83,7 @@ Legacy code can be seen [here.](https://github.com/emilybache/GildedRose-Refacto
 ### Output of Refactored Code with Conjured Items
 ![Output of Refactored code](Images/Refactored_code_wConjured.png "Output of Refactored code")
 
-## Reflection
+## Approach
 
 This was my first attempt at refactoring legacy code and I learned a lot. While I am overall satisfied with the outcome of this project, there are things I would do differently if I were to do this again (or a similar task.)
 
@@ -98,7 +98,7 @@ After reading the challenge and identifying the requirements of the task, my pro
 
 I chose to make an ItemQualityAssessor class as the requirements specified the Items class could not be changed or altered, thus I felt it was more within the parameters of the requirements to change how the items were assessed rather than making special items. 
 
-### What I learned
+## Reflection
 
 While I was aware that there are several articles and videos on how to complete this challenge, I chose not to explore them until completing the project - I wanted to see how my process compared. Having now reviewed those resources and received feedback from a coach, the biggest change I would make to my process would to be to write tests for the legacy code before refactoring. This would have ensured that the program was working as expected.
 
