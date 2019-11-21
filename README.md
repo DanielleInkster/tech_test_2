@@ -89,12 +89,12 @@ This was my first attempt at refactoring legacy code and I learned a lot. While 
 
 After reading the challenge and identifying the requirements of the task, my process (in general terms) was as follows:
 
-> Review the current code and identify how the requirements are currently being met.
-> Review the output of the code found in the practice file and comparing it to the requirements (output was extended to 5 days to get a better understanding of how the code worked over time.)
-> Move the Item class from the Gilded Rose model into its own model and test for functionality according to the given requirements.
-> Remove the legacy code.
-> Use TDD to create a refactored version of the Gilded Rose legacy code.
-> Refactor the new version for Single Responsibility, using TDD to create an ItemQualityAssessor class, leaving the Gilded    	Rose class with only the updating responsibility. I chose to make an ItemQualityAssessor class as the requirements specified   the Items class could not be changed or altered, thus I felt it was more within the parameters of the requirements to change   how the items were assessed rather than making special items. 
+* Review the current code and identify how the requirements are currently being met.
+* Review the output of the code found in the practice file and comparing it to the requirements (output was extended to 5 days to get a better understanding of how the code worked over time.)
+* Move the Item class from the Gilded Rose model into its own model and test for functionality according to the given requirements.
+* Remove the legacy code.
+* Use TDD to create a refactored version of the Gilded Rose legacy code.
+* Refactor the new version for Single Responsibility, using TDD to create an ItemQualityAssessor class, leaving the Gilded    	Rose class with only the updating responsibility. I chose to make an ItemQualityAssessor class as the requirements specified   the Items class could not be changed or altered, thus I felt it was more within the parameters of the requirements to change   how the items were assessed rather than making special items. 
 
 ***What I learned
 
