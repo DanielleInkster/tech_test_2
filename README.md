@@ -68,13 +68,48 @@ legendary item and as such its Quality is 80 and it never alters.
 ## Code Quality
 ![Rspec/SimpleCov coverage](Images/rspec.png "Rspec/SimpleCov Coverage")
 
-#### N.B - Rubocop is still flagging issues with guard clauses and complexity for one method. More in reflection.
+#### N.B - Rubocop is still flagging issues regarding guard clauses and complexity for one method. More in Reflection.
 
 ## Feature tests
 
 ### Output of Legacy Code
 Legacy code can be seen [here.](https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/master/ruby/gilded_rose.rb "Ruby Legacy Code")
 
-![Output of Legacy code](Images/legacy_code.png "Output of Legacy code")
+![Output of Legacy code](Images/Legacy_code.png "Output of Legacy code")
+
+### Output of Refactored Code
+![Output of Refactored code](Images/Refactored_code.png "Output of Refactored code")
+
+### Output of Refactored Code with Conjured Items
+![Output of Refactored code](Images/Refactored_code_wConjured.png "Output of Refactored code")
+
+## Reflection
+
+This was my first attempt at refactoring legacy code and I learned a lot. While I am overall satisfied with the outcome of this project, there are things I would do differently if I were to do this again (or a similar task.)
+
+After reading the challenge and identifying the requirements of the task, my process (in general terms) was as follows:
+
+> Review the current code and identify how the requirements are currently being met.
+> Review the output of the code found in the practice file and comparing it to the requirements (output was extended to 5 days to get a better understanding of how the code worked over time.)
+> Move the Item class from the Gilded Rose model into its own model and test for functionality according to the given requirements.
+> Remove the legacy code.
+> Use TDD to create a refactored version of the Gilded Rose legacy code.
+> Refactor the new version for Single Responsibility, using TDD to create an ItemQualityAssessor class, leaving the Gilded    	Rose class with only the updating responsibility. I chose to make an ItemQualityAssessor class as the requirements specified   the Items class could not be changed or altered, thus I felt it was more within the parameters of the requirements to change   how the items were assessed rather than making special items. 
+
+*** What I learned
+
+While I was aware that there are several articles and videos on how to complete this challenge, I chose not to explore them until completing the project - I wanted to see how my process compared. Having now reviewed those resources and received feedback from a coach, the biggest change I would make to my process would to be to write tests for the legacy code before refactoring. This would ensure that the program was currently working as expected.
+
+I time-boxed myself to two days for this project as perfection is the enemy of completion, as well as to better mimic an actual tech test. Again, while I am overall satisfied with the results, there would be more to do if I had time. 
+
+Given more time, I would refactor some of the logic in the ItemQualityAssessor class - Rubocop (a code quality gem for Ruby) is flagging issues with using 'if' statements rather than guard clauses and some to the logic in the concert_pass method needs to be simplified. I would also like to update my tests for mocking and stubs. 
+
+
+
+
+
+
+
+
 
 
