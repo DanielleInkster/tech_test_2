@@ -61,6 +61,20 @@ legendary item and as such its Quality is 80 and it never alters.
 > rspec # Run the tests to ensure it works
 > rubocop # Check code quality
 ```
-#### N.B - Rubocop is still flagging issues with guard clauses and complexity for one method. More in reflection
+
 
 ======================================
+
+## Code Quality
+![Rspec/SimpleCov coverage](images/rspec.png "Rspec/SimpleCov Coverage")
+
+#### N.B - Rubocop is still flagging issues with guard clauses and complexity for one method. More in reflection.
+
+## Feature tests
+
+### Output of Legacy Code
+Legacy code can be seen [here.](https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/master/ruby/gilded_rose.rb "Ruby Legacy Code")
+
+![Output of Legacy code](images/legacy code output.png "Output of Legacy code")
+
+
