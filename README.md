@@ -100,7 +100,7 @@ I chose to make an ItemQualityAssessor class as the requirements specified the I
 
 ### What I learned
 
-While I was aware that there are several articles and videos on how to complete this challenge, I chose not to explore them until completing the project - I wanted to see how my process compared. Having now reviewed those resources and received feedback from a coach, the biggest change I would make to my process would to be to write tests for the legacy code before refactoring. This would ensure that the program was currently working as expected.
+While I was aware that there are several articles and videos on how to complete this challenge, I chose not to explore them until completing the project - I wanted to see how my process compared. Having now reviewed those resources and received feedback from a coach, the biggest change I would make to my process would to be to write tests for the legacy code before refactoring. This would have ensured that the program was working as expected.
 
 I time-boxed myself to two days for this project as perfection is the enemy of completion, as well as to better mimic an actual tech test. Again, while I am overall satisfied with the results, there would be more to do if I had time. 
 
