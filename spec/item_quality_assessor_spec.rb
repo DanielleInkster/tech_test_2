@@ -1,6 +1,6 @@
-require 'item_assessor'
+require 'item_quality_assessor'
 
-describe ItemAssessor do
+describe ItemQualityAssessor do
   
   describe '#generic_item_check' do
     it 'subtracts one from the quality count if sell_in is positive' do

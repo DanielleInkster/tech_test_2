@@ -5,7 +5,7 @@ class GildedRose
 
   attr_accessor :assess
 
-  def initialize(items, assess = ItemAssessor.new)
+  def initialize(items, assess = ItemQualityAssessor.new)
     @items = items
     @assess = assess
   end

@@ -1,5 +1,5 @@
 
-class ItemAssessor
+class ItemQualityAssessor
   SULFURAS_MAX = 80
   GEN_MAX = 50
   GEN_MIN = 0
