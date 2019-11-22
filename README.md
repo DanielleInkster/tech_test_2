@@ -1,6 +1,8 @@
-# Gilded Rose Refactoring Challenge
+# Tech Test #2 - Week 10
 
-## Original Challenge 
+## Gilded Rose Refactoring Challenge
+
+### Original Challenge 
 #### N.B: The original challenge was written by Terry Hughes in C#. The challenge completed in this repository is a Ruby translation from Emily Bache found [here.](https://github.com/emilybache/GildedRose-Refactoring-Kata "Translated code source")
 
 ### Gilded Rose Requirements Specification
